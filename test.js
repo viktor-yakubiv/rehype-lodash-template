@@ -63,5 +63,11 @@ describe('rehype-template', () => {
   it.skip('supports lodash.templateʼs script evaluation', () => {
     // Tricky to implement, can be done upon a request or via a PR.
     // Personally, I don't need this feature so far.
+    //
+    // Being more specific, you cannot create a for-loop
+    // by the provided lodash's functionality containing HTML elements inside
+    // because the beginning of the loop appears in one text node,
+    // and the end in another text node. Handling everything inside
+    // requires special implementation.
   })
 })

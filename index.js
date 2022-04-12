@@ -4,14 +4,14 @@ import { visitParents as visit } from 'unist-util-visit-parents'
 const attach = (options = {}) => {
   const {
     values = {},
-    templateOptions,
+    templateSettings,
   } = options
 
   const cache = new Map()
 
   const template = str => {
     if (!cache.has(str)) {
-      cache.set(str, makeTemplate(str, templateOptions))
+      cache.set(str, makeTemplate(str, templateSettings))
     }
 
     return cache.get(str)
