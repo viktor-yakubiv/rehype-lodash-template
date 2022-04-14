@@ -1,5 +1,5 @@
 {
-  "name": "rehype-template",
+  "name": "rehype-lodash-template",
   "version": "0.0.1",
   "type": "module",
   "description": "Lodash template function for rehype text nodes",

@@ -2,7 +2,7 @@ import assert from 'assert'
 import { rehype } from 'rehype'
 import template from './index.js'
 
-describe('rehype-template', () => {
+describe('rehype-lodash-template', () => {
   const values = {
     id: 'chapter-1',
     title: 'Chapter 1',
