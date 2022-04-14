@@ -1,4 +1,4 @@
-# rehype-template
+# rehype-lodash-template
 
 **[rehype][]** plugin to replace template strings
 with values from a dictionary.
@@ -11,7 +11,7 @@ It is bases on the [lodash.template][] function
 * [Install](#install)
 * [Use](#use)
 * [API](#api)
-  * [`unified().use(rehypeTemplate[, options])`](#unifieduserehypetemplate-options)
+  * [`unified().use(rehypeLodashTemplate[, options])`](#unifieduserehypelodashtemplate-options)
 * [Types](#types)
 * [Compatibility](#compatibility)
 * [Security](#security)
@@ -50,20 +50,20 @@ This package is [ESM only][esm-only].
 In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
-npm install rehype-template
+npm install rehype-lodash-template
 ```
 
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import rehypeTemplate from 'https://esm.sh/rehype-template@1'
+import rehypeLodashTemplate from 'https://esm.sh/rehype-lodash-template@0.1'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import rehypeTemplate from 'https://esm.sh/rehype-template@1?bundle'
+  import rehypeLodashTemplate from 'https://esm.sh/rehype-lodash-template@0.1?bundle'
 </script>
 ```
 
@@ -82,11 +82,11 @@ And our module `example.js` looks as follows:
 ```js
 import { read } from 'to-vfile'
 import { rehype } from 'rehype'
-import rehypeTemplate from 'rehype-tempalte'
+import rehypeLodashTemplate from 'rehype-lodash-template'
 
 const file = await rehype()
   .data('settings', { fragment: true })
-  .use(rehypeTemplate, {
+  .use(rehypeLodashTemplate, {
     values: {
       id: 'chapter-1',
       title: 'First chapter',
@@ -113,7 +113,7 @@ Now, running `node example.js` yields:
 This package exports no identifiers.
 The default export is `rehypeTemplate`.
 
-### `unified().use(rehypeTemplate[, options])`
+### `unified().use(rehypeLodashTemplate[, options])`
 
 Replaces template strings with values from a dictionary.
 
@@ -126,11 +126,11 @@ the plugin won't function.
 ###### `options.values`
 
 A dictionary to with replacement values.
-It is passed unchanged to tempalte functions
+It is passed unchanged to template functions
 compiled by the [lodash.template][].
 It will support nested structures as Lodash does out of the box.
 
-Default is an `{}` (an empty object).
+Default is `{}` (an empty object).
 
 ###### `options.templateSettings`
 
@@ -153,7 +153,7 @@ but the campatibility is not tested.
 
 ## Security
 
-Use of `rehype-template` can open you up to a
+Use of `rehype-lodash-template` can open you up to a
 [cross-site scripting (XSS)][xss] attack if you pass user provided content in
 `properties` or `content`
 without proper escaping it by a mechanism
@@ -167,6 +167,8 @@ provided by the [lodash.template][] function.
 <!-- Definitions -->
 
 [npm]: https://docs.npmjs.com/cli/install
+
+[esmsh]: https://esm.sh
 
 [esm-only]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 
