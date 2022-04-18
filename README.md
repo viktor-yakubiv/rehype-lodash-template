@@ -149,7 +149,7 @@ It can be though if you send a PR or when I have some extra time.
 ## Compatibility
 
 The project should be compatible with Node.js 12.20+, 14.14+, and 16.0+
-but the campatibility is not tested.
+but the compatibility is not tested.
 
 ## Security
 
