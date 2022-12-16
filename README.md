@@ -2,7 +2,7 @@
 
 **[rehype][]** plugin to replace template strings
 with values from a dictionary.
-It is bases on the [lodash.template][] function
+It is based on the [lodash.template][] function
 
 ## Contents
 
