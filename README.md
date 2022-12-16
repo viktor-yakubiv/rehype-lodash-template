@@ -2,7 +2,7 @@
 
 **[rehype][]** plugin to replace template strings
 with values from a dictionary.
-It is bases on the [lodash.template][] function
+It is based on the [lodash.template][] function
 
 ## Contents
 
@@ -141,11 +141,6 @@ but passed directly.
 
 Default is `undefined`.
 
-## Types
-
-This package is not typed with [TypeScript][].
-It can be though if you send a PR or when I have some extra time.
-
 ## Compatibility
 
 The project should be compatible with Node.js 12.20+, 14.14+, and 16.0+
@@ -171,8 +166,6 @@ provided by the [lodash.template][] function.
 [esmsh]: https://esm.sh
 
 [esm-only]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-
-[typescript]: https://www.typescriptlang.org
 
 [unified]: https://github.com/unifiedjs/unified
 
