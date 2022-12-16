@@ -1,8 +1,6 @@
 # rehype-lodash-template
 
-**[rehype][]** plugin to replace template strings
-with values from a dictionary.
-It is based on the [lodash.template][] function
+A **[rehype][]** plugin to replace template strings based on [lodash.template][].
 
 ## Contents
 
@@ -12,7 +10,6 @@ It is based on the [lodash.template][] function
 * [Use](#use)
 * [API](#api)
   * [`unified().use(rehypeLodashTemplate[, options])`](#unifieduserehypelodashtemplate-options)
-* [Types](#types)
 * [Compatibility](#compatibility)
 * [Security](#security)
 * [License](#license)
