@@ -1,34 +1,53 @@
+/**
+ * A rehype plugin to replace template strings based on lodash.template.
+ *
+ * @since 0.0.0
+ * @package rehype-lodash-template
+ * @author Viktor Yakubiv (www.yakubiv.com)
+ * @copyright Viktor Yakubiv & Contributors
+ * @license MIT
+ */
+
 import makeTemplate from "lodash.template";
-import { visitParents as visit } from "unist-util-visit-parents";
+import { visitParents } from "unist-util-visit-parents";
 
-const attach = (options = {}) => {
-  const { values = {}, templateSettings } = options;
+/**
+ * A rehype plugin to replace template strings based on lodash.template.
+ *
+ * @since 0.0.0
+ * @author Viktor Yakubiv (www.yakubiv.com)
+ *
+ * @param {object} param0 { values, templateSettings }
+ * @returns Rehype Plugin
+ */
+export default function attach({ values, templateSettings }) {
+  const valueCache = new Map();
 
-  const cache = new Map();
-
-  const template = (str) => {
-    if (!cache.has(str)) {
-      cache.set(str, makeTemplate(str, templateSettings));
+  const getTemplate = (identifier) => {
+    if (!valueCache.has(identifier)) {
+      valueCache.set(identifier, makeTemplate(identifier, templateSettings));
     }
 
-    return cache.get(str);
+    return valueCache.get(identifier);
   };
 
-  const substitute = (str) => {
-    const newString = template(str)(values);
+  const substitute = (identifier) => {
+    const template = getTemplate(identifier);
+    const substitutedString = template(values);
 
     // When the template matches one value completely, it's better to return
     // original value so the compiler can process it in own way.
     // This is helpful for boolean attributes like `hidden`
-    // and useful for nulish values to remove the attribute or text completely.
+    // and useful for nullish values to remove the attribute or text completely.
     const valueEntry = Object.entries(values).find(
-      ([name, value]) => str.indexOf(name) >= 0 && newString === String(value)
+      ([name, value]) =>
+        identifier.indexOf(name) >= 0 && substitutedString === String(value)
     );
 
-    return valueEntry?.[1] ?? newString;
+    return valueEntry?.[1] ?? substitutedString;
   };
 
-  const visitor = (node, ancestors) => {
+  const nodeVisitor = (node, ancestors) => {
     if (node.properties != null) {
       const processedPropEntries = Object.entries(node.properties).map(
         ([name, value]) =>
@@ -53,11 +72,5 @@ const attach = (options = {}) => {
     }
   };
 
-  const transform = (tree) => {
-    visit(tree, visitor);
-  };
-
-  return transform;
-};
-
-export default attach;
+  return (tree) => visitParents(tree, nodeVisitor);
+}
