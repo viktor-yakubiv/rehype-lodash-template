@@ -1,18 +1,18 @@
 {
   "name": "rehype-lodash-template",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "main": "index.js",
   "description": "Lodash template function for rehype text nodes",
   "author": "Viktor Yakubiv (www.yakubiv.com)",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^9.2.2",
+    "mocha": "^10.2.0",
     "rehype": "^12.0.1"
   },
   "dependencies": {
     "lodash.template": "^4.5.0",
-    "unist-util-visit-parents": "^5.1.0"
+    "unist-util-visit-parents": "^5.1.1"
   },
   "scripts": {
     "test": "mocha test.js"
