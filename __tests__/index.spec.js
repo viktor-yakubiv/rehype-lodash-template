@@ -1,6 +1,6 @@
 import assert from "assert";
 import { rehype } from "rehype";
-import template from "./index.js";
+import template from "../src/index.js";
 
 describe("rehype-lodash-template", () => {
   const values = {
