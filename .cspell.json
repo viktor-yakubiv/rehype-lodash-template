@@ -1,0 +1,19 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "dictionaries": [
+        "softwareTerms",
+        "typescript",
+        "node",
+        "filetypes",
+        "npm"
+    ],
+    "words": [
+        "Viktor",
+        "Yakubiv",
+        "rehype",
+        "unist",
+        "vfile",
+        "Webber"
+    ]
+}

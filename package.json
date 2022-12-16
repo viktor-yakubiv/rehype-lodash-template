@@ -12,10 +12,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash.template": "^4.5.1",
+    "cspell": "^6.17.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.1",
     "rehype": "^12.0.1"
   },
@@ -25,6 +27,8 @@
   },
   "scripts": {
     "test": "mocha __tests__/index.spec.js",
-    "lint": "eslint src/**/*.js"
+    "lint": "npm-run-all lint:*",
+    "lint:cspell": "cspell **/*",
+    "lint:eslint": "eslint src/**/*.js"
   }
 }
