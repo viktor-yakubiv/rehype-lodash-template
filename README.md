@@ -117,13 +117,13 @@ The default export is `rehypeTemplate`.
 
 Replaces template strings with values from a dictionary.
 
-##### `options`
+#### `options`
 
 Configuration (optional).
 Although, if you don't pass the `values` option with a replacement map,
 the plugin won't function.
 
-###### `options.values`
+##### `options.values`
 
 A dictionary to with replacement values.
 It is passed unchanged to template functions
@@ -132,7 +132,7 @@ It will support nested structures as Lodash does out of the box.
 
 Default is `{}` (an empty object).
 
-###### `options.templateSettings`
+##### `options.templateSettings`
 
 Options passed directly to the [lodash.template][].
 See the structure and details in Lodash documentation.
@@ -156,7 +156,7 @@ provided by the [lodash.template][] function.
 
 ## License
 
-[MIT](./LICENSE) © [Viktor Yakubiv](https://yakubiv.com)
+[MIT](./LICENSE) © [Viktor Yakubiv](https://yakubiv.com) & Contributors
 
 
 <!-- Definitions -->

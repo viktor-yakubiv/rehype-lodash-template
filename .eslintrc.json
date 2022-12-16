@@ -1,0 +1,14 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}
