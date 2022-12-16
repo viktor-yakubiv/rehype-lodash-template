@@ -2,8 +2,8 @@
   "name": "rehype-lodash-template",
   "version": "0.2.0",
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "description": "Lodash template function for rehype text nodes",
   "contributors": [
     "Viktor Yakubiv (www.yakubiv.com)",
@@ -24,7 +24,7 @@
     "unist-util-visit-parents": "^5.1.1"
   },
   "scripts": {
-    "test": "mocha test.js",
-    "lint": "eslint index.js"
+    "test": "mocha __tests__/index.spec.js",
+    "lint": "eslint src/**/*.js"
   }
 }
