@@ -17,7 +17,7 @@ const attach = (options = {}) => {
     return cache.get(str)
   }
 
-  const substitude = str => {
+  const substitute = str => {
     const newString = template(str)(values)
 
     // When the template matches one value completely, it's better to return
@@ -35,14 +35,14 @@ const attach = (options = {}) => {
       const processedPropEntries = Object.entries(node.properties)
         .map(([name, value]) =>
           Array.isArray(value)
-            ? [name, substitude(value.join(' ')).split(/\s+/)]
-            : [name, substitude(value)])
+            ? [name, substitute(value.join(' ')).split(/\s+/)]
+            : [name, substitute(value)])
 
       node.properties = Object.fromEntries(processedPropEntries)
     }
 
     if (node.value != null) {
-      node.value = substitude(node.value) ?? ''
+      node.value = substitute(node.value) ?? ''
 
       if (node.value == null || node.value === '') {
         const [parent] = ancestors.slice(-1)
