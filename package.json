@@ -6,6 +6,9 @@
   "types": "index.d.ts",
   "description": "Lodash template function for rehype text nodes",
   "author": "Viktor Yakubiv (www.yakubiv.com)",
+  "contributors": [
+    "Dom Webber <dom.webber@hotmail.com>"
+  ],
   "license": "MIT",
   "devDependencies": {
     "mocha": "^10.2.0",
