@@ -143,12 +143,13 @@ Default is `undefined`.
 
 ## Types
 
-This package is not typed with [TypeScript][].
-It can be though if you send a PR or when I have some extra time.
+This package is typed with [TypeScript][].
+It exports `Options` type,
+which specifies the interface of the accepted options.
 
 ## Compatibility
 
-Compatibility tested with Node.js v12.20-v16.17.0
+Compatibility tested with Node.js v12.20 – v19.4
 
 ## Security
 
